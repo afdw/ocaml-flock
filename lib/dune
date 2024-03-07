@@ -1,0 +1,4 @@
+(library
+ (name flock)
+ (public_name flock)
+ (libraries flock_bindings))

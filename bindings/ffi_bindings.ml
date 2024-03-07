@@ -10,7 +10,7 @@ module Types (F: Cstubs.Types.TYPE) = struct
   end
 end
 
-module Bindings (F : Cstubs.FOREIGN) = struct
+module Functions (F : Cstubs.FOREIGN) = struct
   open F
   let flock = foreign "flock" (int @-> int @-> returning int)
 end

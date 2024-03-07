@@ -27,7 +27,7 @@ let sleep s = Unix.select [] [] [] s |> ignore
 
 let smoke_test =
   "Smoke test that we can call the function at all" >:: fun () ->
-  with_temp_file (fun path fd -> flock fd LOCK_EX)
+  with_temp_file (fun _path fd -> flock fd LOCK_EX)
 
 let exclusion_tests =
   let try_lock with_mode try_mode expectation =

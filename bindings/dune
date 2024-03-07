@@ -1,0 +1,16 @@
+(library
+ (name flock_bindings)
+ (public_name flock.flock_bindings)
+ (libraries ctypes ctypes-foreign)
+ (ctypes
+  (build_flags_resolver vendored)
+  (external_library_name "libc")
+  (headers (include "sys/file.h"))
+  (type_description
+   (instance Types)
+   (functor Ffi_bindings))
+  (function_description
+   (concurrency unlocked)
+   (instance Functions)
+   (functor Ffi_bindings))
+  (generated_entry_point C)))
